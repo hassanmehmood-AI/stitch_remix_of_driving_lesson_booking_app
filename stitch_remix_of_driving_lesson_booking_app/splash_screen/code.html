@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DriveFlow - Welcome</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&amp;family=Inter:wght@400;500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#217128",
+                    "on-surface": "#1a1c1c",
+                    "primary-fixed": "#d5e3ff",
+                    "on-secondary-fixed-variant": "#005312",
+                    "surface-container": "#eeeeee",
+                    "inverse-primary": "#a7c8ff",
+                    "error": "#ba1a1a",
+                    "background": "#f9f9f9",
+                    "primary-container": "#003366",
+                    "surface-container-highest": "#e2e2e2",
+                    "secondary-fixed-dim": "#88d982",
+                    "tertiary-fixed": "#ffdcc2",
+                    "tertiary-container": "#502900",
+                    "inverse-surface": "#2f3131",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#f1f1f1",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-dim": "#dadada",
+                    "on-primary-fixed": "#001b3c",
+                    "on-tertiary-fixed": "#2e1500",
+                    "outline": "#737780",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#311700",
+                    "on-tertiary-container": "#e78100",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed": "#a3f69c",
+                    "surface-tint": "#3a5f94",
+                    "secondary-container": "#a0f399",
+                    "on-tertiary-fixed-variant": "#6d3a00",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#002204",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "surface-container-low": "#f3f3f3",
+                    "surface-variant": "#e2e2e2",
+                    "on-primary-container": "#799dd6",
+                    "on-surface-variant": "#43474f",
+                    "secondary": "#1b6d24",
+                    "primary": "#001e40",
+                    "tertiary-fixed-dim": "#ffb77a",
+                    "on-background": "#1a1c1c",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "surface": "#f9f9f9",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#c3c6d1",
+                    "surface-bright": "#f9f9f9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": [
+                            "Manrope"
+                    ],
+                    "body": [
+                            "Inter"
+                    ],
+                    "label": [
+                            "Inter"
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-splash-mesh {
+            background-color: #f9f9f9;
+            background-image: radial-gradient(at 0% 0%, hsla(210,100%,96%,1) 0, transparent 50%), 
+                              radial-gradient(at 100% 100%, hsla(215,30%,90%,1) 0, transparent 50%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-splash-mesh font-body text-on-surface antialiased overflow-hidden">
+<!-- Splash Screen Container -->
+<main class="relative min-h-screen flex flex-col items-center justify-center px-8">
+<!-- Subtle Ambient Elements -->
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary-fixed/20 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-secondary-fixed/10 blur-[120px] rounded-full"></div>
+<!-- Central Content Canvas -->
+<div class="relative z-10 flex flex-col items-center">
+<!-- Logo Treatment -->
+<div class="mb-12 flex flex-col items-center">
+<!-- Abstract Circular Logo Track -->
+<div class="relative w-24 h-24 mb-8 flex items-center justify-center">
+<!-- Progress Orbit Base -->
+<div class="absolute inset-0 border-4 border-surface-container-highest rounded-full"></div>
+<!-- Active Progress Segment (The "Flow") -->
+<div class="absolute inset-0 border-4 border-primary rounded-full" style="clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 50%);"></div>
+<!-- Core Icon -->
+<div class="w-16 h-16 bg-primary-container rounded-xl flex items-center justify-center shadow-[0_12px_40px_rgba(0,30,64,0.12)]">
+<span class="material-symbols-outlined text-4xl text-on-primary-container" style="font-variation-settings: 'FILL' 1;">
+                            speed
+                        </span>
+</div>
+</div>
+<!-- Brand Typography -->
+<h1 class="font-headline text-5xl font-extrabold tracking-tighter text-primary">
+                    DriveFlow
+                </h1>
+</div>
+<!-- Tagline Narrative -->
+<div class="flex flex-col items-center text-center max-w-xs">
+<p class="font-body text-lg text-on-surface-variant leading-relaxed tracking-tight">
+                    Learn Driving. <span class="text-primary font-medium">Anytime.</span> Anywhere.
+                </p>
+<!-- Editorial Separator -->
+<div class="mt-8 h-[1px] w-12 bg-outline-variant opacity-30"></div>
+<!-- Sub-Label for Premium Feel -->
+<span class="mt-4 font-label text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold">
+                    Elite Instruction Mobile
+                </span>
+</div>
+</div>
+<!-- Footer Branding (Minimalist) -->
+<footer class="absolute bottom-12 w-full text-center">
+<div class="flex items-center justify-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-secondary"></div>
+<span class="text-[11px] font-label text-on-surface-variant font-medium tracking-wide">
+                    AUTHENTICATED EXPERIENCE
+                </span>
+</div>
+</footer>
+</main>
+<!-- Contextual Suppression Note: No Navigation Shells or FABs per "Linear/Transactional" suppression rule for Splash screens -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const supabaseClient = window.supabase.createClient(
+                "https://mhrvkvgunkgmscyclxqj.supabase.co",
+                "sb_publishable_jS9jwbOvVW5wA3stOmlekw_M-DIQEV3"
+            );
+
+            // Wait for 2 seconds to show the splash screen, then check session
+            setTimeout(async () => {
+                const { data: { session } } = await supabaseClient.auth.getSession();
+                if (session) {
+                    window.location.href = '../interactive_book_lesson/code.html';
+                } else {
+                    window.location.href = '../login/code.html';
+                }
+            }, 2000);
+        });
+    </script>
+</body></html>

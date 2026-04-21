@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>DriveFlow - Get Started</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap"
+    rel="stylesheet" />
+  <!-- Material Icons -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#217128",
+            "on-surface": "#1a1c1c",
+            "primary-fixed": "#d5e3ff",
+            "on-secondary-fixed-variant": "#005312",
+            "surface-container": "#eeeeee",
+            "inverse-primary": "#a7c8ff",
+            "error": "#ba1a1a",
+            "background": "#f9f9f9",
+            "primary-container": "#003366",
+            "surface-container-highest": "#e2e2e2",
+            "secondary-fixed-dim": "#88d982",
+            "tertiary-fixed": "#ffdcc2",
+            "tertiary-container": "#502900",
+            "inverse-surface": "#2f3131",
+            "surface-container-lowest": "#ffffff",
+            "inverse-on-surface": "#f1f1f1",
+            "surface-container-high": "#e8e8e8",
+            "surface-dim": "#dadada",
+            "on-primary-fixed": "#001b3c",
+            "on-tertiary-fixed": "#2e1500",
+            "outline": "#737780",
+            "on-tertiary": "#ffffff",
+            "tertiary": "#311700",
+            "on-tertiary-container": "#e78100",
+            "on-error-container": "#93000a",
+            "secondary-fixed": "#a3f69c",
+            "surface-tint": "#3a5f94",
+            "secondary-container": "#a0f399",
+            "on-tertiary-fixed-variant": "#6d3a00",
+            "on-error": "#ffffff",
+            "on-secondary-fixed": "#002204",
+            "primary-fixed-dim": "#a7c8ff",
+            "surface-container-low": "#f3f3f3",
+            "surface-variant": "#e2e2e2",
+            "on-primary-container": "#799dd6",
+            "on-surface-variant": "#43474f",
+            "secondary": "#1b6d24",
+            "primary": "#001e40",
+            "tertiary-fixed-dim": "#ffb77a",
+            "on-background": "#1a1c1c",
+            "on-primary-fixed-variant": "#1f477b",
+            "surface": "#f9f9f9",
+            "error-container": "#ffdad6",
+            "on-primary": "#ffffff",
+            "outline-variant": "#c3c6d1",
+            "surface-bright": "#f9f9f9"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "3xl": "1.5rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Manrope', sans-serif;
+    }
+
+    .glass-nav {
+      backdrop-filter: blur(20px);
+      background-color: rgba(249, 249, 249, 0.8);
+    }
+  </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+  <!-- TopAppBar (Auth State: Hidden/Simplified) -->
+  <header class="fixed top-0 w-full z-50 flex justify-center items-center px-6 h-20 bg-transparent">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 bg-primary-container rounded-lg flex items-center justify-center">
+        <span class="material-symbols-outlined text-on-primary-container text-sm"
+          data-icon="steering_wheel">steering_wheel_heat</span>
+      </div>
+      <span class="text-xl font-extrabold tracking-tight text-primary">DriveFlow</span>
+    </div>
+  </header>
+  <main class="flex-grow flex items-center justify-center px-4 py-20 relative overflow-hidden">
+    <!-- Subtle Ambient Background Element -->
+    <div class="absolute top-1/4 -right-20 w-96 h-96 bg-primary-container/5 rounded-full blur-[100px]"></div>
+    <div class="absolute bottom-1/4 -left-20 w-80 h-80 bg-on-tertiary-container/5 rounded-full blur-[80px]"></div>
+    <!-- Login Container -->
+    <div class="w-full max-w-md z-10">
+      <!-- Content Card -->
+      <div
+        class="bg-surface-container-lowest rounded-3xl p-8 md:p-12 shadow-[0_12px_40px_rgba(0,30,64,0.06)] border border-outline-variant/10">
+        <div class="text-center mb-10">
+          <h1 class="text-4xl font-extrabold text-primary tracking-tight mb-3">Get Started</h1>
+          <p class="text-on-surface-variant text-base">Continue to book your lessons</p>
+        </div>
+        <!-- Main CTA -->
+        <div class="space-y-6" id="auth-options">
+          <button id="google-btn"
+            class="w-full h-16 bg-surface-container-lowest border border-outline-variant/30 rounded-2xl flex items-center justify-center gap-4 transition-all duration-200 hover:bg-surface-container-low active:scale-[0.97] group">
+            <svg class="w-6 h-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4"></path>
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-1 .67-2.28 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853"></path>
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                fill="#FBBC05"></path>
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 12-4.53z"
+                fill="#EA4335"></path>
+            </svg>
+            <span class="text-on-surface font-semibold text-lg tracking-tight">Continue with Google</span>
+          </button>
+          <div class="flex items-center gap-4 py-2">
+            <div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+            <span class="text-outline text-xs uppercase tracking-widest font-medium">or</span>
+            <div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+          </div>
+          <button id="phone-btn"
+            class="w-full text-center py-2 text-primary font-semibold hover:text-on-primary-container transition-colors duration-200">
+            continue with phone number
+          </button>
+        </div>
+
+        <!-- Phone Input Section (Hidden) -->
+        <div id="phone-section" class="hidden space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
+          <div class="space-y-2">
+            <label for="phone-number" class="text-sm font-bold text-primary px-1">Phone Number</label>
+            <div class="relative group">
+              <div
+                class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-on-surface-variant font-semibold">
+                +1
+              </div>
+              <input type="tel" id="phone-number" placeholder="(555) 000-0000"
+                class="w-full h-16 pl-12 pr-4 bg-surface-container-low border border-outline-variant/20 rounded-2xl focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none text-lg font-medium">
+            </div>
+          </div>
+          <button id="verify-btn"
+            class="w-full h-16 bg-primary text-on-primary font-bold rounded-2xl shadow-[0_8px_30px_rgb(0,30,64,0.15)] hover:shadow-[0_8px_40px_rgb(0,30,64,0.25)] hover:bg-primary/95 transition-all duration-300 active:scale-[0.98]">
+            Continue
+          </button>
+          <button id="back-to-options"
+            class="w-full text-center py-2 text-outline font-medium hover:text-primary transition-colors duration-200">
+            Back to other options
+          </button>
+        </div>
+        <!-- Footer Context -->
+        <div class="mt-12 text-center">
+          <p class="text-xs text-on-surface-variant/60 leading-relaxed max-w-[240px] mx-auto">
+            By continuing, you agree to our <a class="text-primary hover:underline" href="#">Terms of Service</a> and <a
+              class="text-primary hover:underline" href="#">Privacy Policy</a>.
+          </p>
+        </div>
+      </div>
+      <!-- Contextual Branding Image -->
+      <div class="mt-8 relative h-48 w-full rounded-3xl overflow-hidden group">
+        <img alt="Interior of a luxury car"
+          class="w-full h-full object-cover grayscale opacity-50 transition-transform duration-700 group-hover:scale-105"
+          data-alt="Interior of a premium modern vehicle with soft morning light hitting the steering wheel and dashboard, cinematic focus, soft bokeh"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7YMCJl8YGtfGWP7z8YMlYX5raYqyNGa3TL5yOIbNvWy6B8PIxiGX_qpj4_xVynCEq-S9q_H2YGwGpO-K8sO27BUDb9xEJe4K11pYKY7eYn97YDR2rKJFFZh3xu41YM7oEOCVo5uHGc8IiUaYNhmhCJUsCXL13xY_aRd154aO4I6VynVm2_CwEgtpgV_F80pDK_pdJScoRjamkHTf17fy4QqEVGqKQHv_Yz0zi2WuU3tnQm592bG27vkTJvSoqdXvfz9G5S2Y6okk" />
+        <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+      </div>
+    </div>
+  </main>
+  <!-- Footer Meta -->
+  <footer class="py-8 px-6 text-center text-on-surface-variant/40 text-xs font-medium tracking-wide">
+    © 2024 DRIVEFLOW ACADEMY. ALL RIGHTS RESERVED.
+  </footer>
+  <!-- Semantic Suppressions: No Nav Shell as per instructions for Task-Focused screen -->
+  <!-- Loading Overlay -->
+  <div id="loading-overlay"
+    class="hidden fixed inset-0 z-[100] bg-surface/90 backdrop-blur-md flex flex-col items-center justify-center animate-in fade-in duration-500">
+    <div class="relative w-24 h-24 mb-8">
+      <div class="absolute inset-0 border-4 border-primary/10 rounded-full"></div>
+      <div class="absolute inset-0 border-4 border-primary rounded-full animate-[spin_1.5s_linear_infinite]"
+        style="clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 50%);"></div>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <span class="material-symbols-outlined text-primary text-4xl animate-pulse">lock</span>
+      </div>
+    </div>
+    <h2 class="text-3xl font-extrabold text-primary tracking-tight mb-2">Signing you in...</h2>
+    <p class="text-on-surface-variant font-medium">Preparing your DriveFlow experience</p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const supabaseClient = window.supabase.createClient(
+        "https://mhrvkvgunkgmscyclxqj.supabase.co",
+        "sb_publishable_jS9jwbOvVW5wA3stOmlekw_M-DIQEV3"
+      );
+
+      const authOptions = document.getElementById('auth-options');
+      const phoneSection = document.getElementById('phone-section');
+      const loadingOverlay = document.getElementById('loading-overlay');
+
+      const googleBtn = document.getElementById('google-btn');
+      const phoneBtn = document.getElementById('phone-btn');
+      const verifyBtn = document.getElementById('verify-btn');
+      const backToOptions = document.getElementById('back-to-options');
+      const phoneNumberInput = document.getElementById('phone-number');
+
+      // Toggle sections
+      phoneBtn.addEventListener('click', () => {
+        authOptions.classList.add('hidden');
+        phoneSection.classList.remove('hidden');
+        phoneNumberInput.focus();
+      });
+
+      backToOptions.addEventListener('click', () => {
+        phoneSection.classList.add('hidden');
+        authOptions.classList.remove('hidden');
+      });
+
+      // Handle session and redirects
+      supabaseClient.auth.onAuthStateChange((event, session) => {
+        if (session) {
+          window.location.href = '../interactive_book_lesson/code.html';
+        }
+      });
+
+      googleBtn.addEventListener('click', async () => {
+        loadingOverlay.classList.remove('hidden');
+
+        const { error } = await supabaseClient.auth.signInWithOAuth({
+          provider: "google",
+          options: {
+            redirectTo: window.location.origin + '/interactive_book_lesson/code.html'
+          }
+        });
+
+        if (error) {
+          console.error('Login error:', error.message);
+          loadingOverlay.classList.add('hidden');
+          alert('Login failed: ' + error.message);
+        }
+      })
+
+      verifyBtn.addEventListener('click', async () => {
+        const phone = phoneNumberInput.value;
+        if (phone.length >= 7) {
+          loadingOverlay.classList.remove('hidden');
+          await supabaseClient.auth.signInWithOtp({
+            phone: "+92" + phone.replace(/\D/g, '')
+          });
+          alert("OTP sent to your phone!");
+        } else {
+          phoneNumberInput.classList.add('border-error');
+          setTimeout(() => phoneNumberInput.classList.remove('border-error'), 2000);
+        }
+      });
+
+      // Format phone number input
+      phoneNumberInput.addEventListener('input', (e) => {
+        let x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+        e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+      });
+    });
+  </script>
+</body>
+
+</html>
+>
